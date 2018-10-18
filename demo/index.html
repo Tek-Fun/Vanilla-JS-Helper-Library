@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="../src/domManipulation.js"></script>
+</head>
+<body>
+  <p class="blue-color bg-red" id="text1">Hello world</p>
+  <p class="blue-color" id="text2">Hello world</p>
+  <p class="bg-red" id="text3">Hello world</p>
+
+  <script>
+    $('#text1').elems[0].style.fontStyle = 'italic';
+    $('#text2').addClass('bg-red');
+    $('#text3').removeClass('bg-red');
+  </script>
+</body>
+</html>
