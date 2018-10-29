@@ -7,16 +7,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="../src/domManipulation.js"></script>
+  <script src="../src/serializeForm.js"></script>
 </head>
 <body>
   <p class="blue-color bg-red" id="text1">Hello world</p>
   <p class="blue-color" id="text2">Hello world</p>
   <p class="bg-red" id="text3">Hello world</p>
+  <form class="save-me" id="save-me">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="Mike Wazowski">
+
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address" value="123 Scare Avenue, Monstropolis">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" value="mikew@monstersinc.com">
+
+    <label for="hear-about-us">How did you hear about us?</label>
+    <select name="hear-about-us" id="hear-about-us">
+      <option value=""></option>
+      <option value="google">Google</option>
+      <option value="referral">Referred by a Friend</option>
+      <option value="tv" selected>A TV Ad</option>
+      <option value="radio">A Radio Ad</option>
+    </select>
+
+      <label for="hear-about-us-multi">How did you hear about us?</label>
+    <select name="hear-about-us-multi" id="hear-about-us-multi" multiple>
+      <option value=""></option>
+      <option value="google">Google</option>
+      <option value="referral" selected>Referred by a Friend</option>
+      <option value="tv" selected>A TV Ad</option>
+      <option value="radio">A Radio Ad</option>
+    </select>
+
+    <label id="more">Additional thoughts?</label>
+    <textarea name="more" id="more">Laughter produces more energy than screams!</textarea>
+
+    <p><strong>Do you agree to our terms of service?</strong></p>
+    <label class="label-plain">
+      <input type="radio" name="tos" value="yes" checked>
+      Yes
+    </label>
+    <label class="label-plain">
+      <input type="radio" name="tos" value="no">
+      No
+    </label>
+
+    <p><strong>Pick your favorite university.</strong></p>
+
+    <label class="label-plain">
+      <input type="checkbox" name="scare-tech">
+      Scare Tech
+    </label>
+
+    <label class="label-plain">
+      <input type="checkbox" name="mu" checked>
+      Monster University
+    </label>
+
+    <p><button type="submit">Submit</button></p>
+
+  </form>
 
   <script>
     $('#text1').elems[0].style.fontStyle = 'italic';
     $('#text2').addClass('bg-red');
     $('#text3').removeClass('bg-red');
+  </script>
+  <script>
+    var form = document.querySelector('#save-me');
+    var data = serializeArray(form);
+    debugger
+    console.log(data);
   </script>
 </body>
 </html>
